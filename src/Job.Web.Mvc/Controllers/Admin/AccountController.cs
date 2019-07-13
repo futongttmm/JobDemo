@@ -75,6 +75,7 @@ namespace Job.Web.Controllers
 
         #region Login / Logout
 
+        //[Route("Admin/Account/Login")]
         public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
         {
             if (string.IsNullOrWhiteSpace(returnUrl))
@@ -82,7 +83,7 @@ namespace Job.Web.Controllers
                 returnUrl = GetAppHomeUrl();
             }
 
-            return View(new LoginFormViewModel
+            return View( "~/Views/Admin/Account/Login.cshtml", new LoginFormViewModel
             {
                 ReturnUrl = returnUrl,
                 IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,

@@ -13,7 +13,7 @@ using Job.Configuration;
 using Job.Identity;
 using Job.Web.Resources;
 using Abp.AspNetCore.SignalR.Hubs;
-
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Job.Web.Startup
 {
@@ -28,6 +28,12 @@ namespace Job.Web.Startup
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<RazorViewEngineOptions>(options =>
+            {
+                options.ViewLocationExpanders.Add(new CustomViewEngine());
+            });
+
             // MVC
             services.AddMvc(
                 options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute())
@@ -75,13 +81,22 @@ namespace Job.Web.Startup
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "defaultWithArea",
-                    template: "{area}/{controller=Home}/{action=Index}/{id?}");
+                // add a page before home page
+                //routes.MapRoute(
+                //    name: "JobDisplay",
+                //    template: "{controller=Job}/{action=Index}/{id?}");
 
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    name: "Admin",
+                    template: "admin/{controller=Home}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //    name: "defaultWithArea",
+                //    template: "{area}/{controller=Home}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
