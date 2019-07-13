@@ -33,6 +33,7 @@ using Job.Web.Views.Shared.Components.TenantChange;
 
 namespace Job.Web.Controllers
 {
+    [Area("Admin")]
     public class AccountController : JobControllerBase
     {
         private readonly UserManager _userManager;
@@ -75,7 +76,6 @@ namespace Job.Web.Controllers
 
         #region Login / Logout
 
-        //[Route("Admin/Account/Login")]
         public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
         {
             if (string.IsNullOrWhiteSpace(returnUrl))
@@ -83,7 +83,7 @@ namespace Job.Web.Controllers
                 returnUrl = GetAppHomeUrl();
             }
 
-            return View( "~/Views/Admin/Account/Login.cshtml", new LoginFormViewModel
+            return View( new LoginFormViewModel
             {
                 ReturnUrl = returnUrl,
                 IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,

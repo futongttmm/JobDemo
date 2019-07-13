@@ -4,11 +4,13 @@ using Job.Controllers;
 
 namespace Job.Web.Controllers
 {
+	[Area("Admin")]
 	[AbpMvcAuthorize]
-	public class AboutController : JobControllerBase
+	public class HomeController : JobControllerBase
 	{
 		public ActionResult Index()
 		{
+			// return View("~/Views/Admin/Home/Index.cshtml");
 			return View();
 		}
 	}

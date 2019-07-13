@@ -10,6 +10,7 @@ using Job.Web.Models.Roles;
 
 namespace Job.Web.Controllers
 {
+    [Area("Admin")]
     [AbpMvcAuthorize(PermissionNames.Pages_Roles)]
     public class RolesController : JobControllerBase
     {

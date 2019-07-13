@@ -10,6 +10,7 @@ using Job.Users.Dto;
 
 namespace Job.Web.Controllers
 {
+    [Area("Admin")]
     [AbpMvcAuthorize(PermissionNames.Pages_Users)]
     public class UsersController : JobControllerBase
     {

@@ -5,11 +5,11 @@ using Job.Controllers;
 namespace Job.Web.Controllers
 {
 	[AbpMvcAuthorize]
-	public class HomeController : JobControllerBase
+    [Area("Admin")]
+	public class AboutController : JobControllerBase
 	{
 		public ActionResult Index()
 		{
-			// return View("~/Views/Admin/Home/Index.cshtml");
 			return View();
 		}
 	}

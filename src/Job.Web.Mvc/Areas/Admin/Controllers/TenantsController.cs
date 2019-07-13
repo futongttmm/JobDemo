@@ -9,6 +9,7 @@ using Job.MultiTenancy.Dto;
 
 namespace Job.Web.Controllers
 {
+    [Area("Admin")]
     [AbpMvcAuthorize(PermissionNames.Pages_Tenants)]
     public class TenantsController : JobControllerBase
     {

@@ -7,8 +7,10 @@ using Abp.Web.Mvc.Models;
 
 namespace Job.Web.Controllers
 {
+    [Area("Admin")]
     public class ErrorController : AbpController
     {
+        
         private readonly IErrorInfoBuilder _errorInfoBuilder;
 
         public ErrorController(IErrorInfoBuilder errorInfoBuilder)
