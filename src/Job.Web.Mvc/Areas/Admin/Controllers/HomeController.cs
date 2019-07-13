@@ -10,7 +10,6 @@ namespace Job.Web.Controllers
 	{
 		public ActionResult Index()
 		{
-			// return View("~/Views/Admin/Home/Index.cshtml");
 			return View();
 		}
 	}

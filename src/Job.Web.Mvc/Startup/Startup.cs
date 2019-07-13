@@ -84,14 +84,16 @@ namespace Job.Web.Startup
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name:"default",
-                    template:"{area=Admin}/{controller=Home}/{action=Index}/{id?}"
-                    );
+                
 
                 routes.MapRoute(
                     name: "defaultWithArea",
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{area=Admin}/{controller=Account}/{action=Login}/{id?}"
+                    );
 
             });
         }
