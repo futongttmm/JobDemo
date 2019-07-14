@@ -91,9 +91,18 @@ namespace Job.Web.Startup
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
-                    name: "default",
-                    template: "{area=Admin}/{controller=Account}/{action=Login}/{id?}"
+                    name: "defaultWhitUser",
+                    template: "{area=User}/{controller=Home}/{action=Index}/{id?}"
                     );
+
+                //routes.MapRoute(
+                //    name: "defaultWhitAdmin",
+                //    template: "{area=Admin}/{controller=Account}/{action=Login}/{id?}"
+                //    );
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Account}/{action=Login}/{id?}");
 
             });
         }

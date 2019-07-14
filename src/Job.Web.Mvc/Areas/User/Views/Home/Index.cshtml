@@ -1,0 +1,31 @@
+﻿@model  Job.Web.Areas.User.Models.JobDisplayViewModel
+
+@{
+    ViewBag.Title = "Job Display";
+}
+
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Company Name</td>
+                <td>Post Data</td>
+                <td>Location</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Job.Id</td>
+                <td>@Model.Job.Name</td>
+                <td>@Model.Job.Description</td>
+                <td>@Model.Job.CompanyName</td>
+                <td>@Model.Job.PostData</td>
+                <td>@Model.Job.Location</td>
+            </tr>
+        </tbody>
+    </table>
+
+<a asp-area="Admin" asp-controller="Account" asp-action="Login">Navigate To Admin</a>
+
