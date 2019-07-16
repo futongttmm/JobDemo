@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Job.Web.Models.JobInfo>
+
+@{
+    ViewBag.Title = "Job Display";
+}
+
+@section styles {
+    <link href="~/bundles/bundles.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<h2>Job Information</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Company Name</td>
+            <td>Post Data</td>
+            <td>Location</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var job in Model)
+        {
+            <tr>
+                <td>@job.Name</td>
+                <td>@job.Description</td>
+                <td>@job.CompanyName</td>
+                <td>@job.PostData</td>
+                <td>@job.Location</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

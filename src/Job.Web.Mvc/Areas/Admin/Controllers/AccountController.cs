@@ -387,7 +387,7 @@ namespace Job.Web.Controllers
         public async Task<ActionResult> TenantChangeModal()
         {
             var loginInfo = await _sessionAppService.GetCurrentLoginInformations();
-            return View("/Views/Shared/Components/TenantChange/_ChangeModal.cshtml", new ChangeModalViewModel
+            return View("~/Areas/Admin/Views/Shared/Components/TenantChange/_ChangeModal.cshtml", new ChangeModalViewModel
             {
                 TenancyName = loginInfo.Tenant?.TenancyName
             });

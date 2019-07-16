@@ -10,6 +10,7 @@ namespace Job.Web.Startup
     {
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
+            
             if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
             {
                 services.AddAuthentication()

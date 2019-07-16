@@ -25,13 +25,27 @@
             <li class="@(Model.ActiveMenuItemName == menuItem.Name ? "active" : "")">
                 @if (menuItem.Items.IsNullOrEmpty())
                 {
-                    <a href="@calculateMenuUrl(menuItem.Url)">
-                        @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
-                        {
-                            <i class="material-icons">@menuItem.Icon</i>
-                        }
-                        <span>@menuItem.DisplayName</span>
-                    </a>
+                    @if(menuItem.Name == "Home")
+                    {
+                        <a href="/Admin/Home/Index">
+                            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                            {
+                                <i class="material-icons">@menuItem.Icon</i>
+                            }
+                            <span>@menuItem.DisplayName</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@calculateMenuUrl(menuItem.Url)">
+                            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                            {
+                                <i class="material-icons">@menuItem.Icon</i>
+                            }
+                            <span>@menuItem.DisplayName</span>
+                        </a>
+                    }
+                    
                 }
                 else
                 {

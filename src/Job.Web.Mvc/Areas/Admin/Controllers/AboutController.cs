@@ -5,7 +5,7 @@ using Job.Controllers;
 namespace Job.Web.Controllers
 {
 	[AbpMvcAuthorize]
-    [Area("Admin")]
+	[Area("Admin")]
 	public class AboutController : JobControllerBase
 	{
 		public ActionResult Index()

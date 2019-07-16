@@ -24,7 +24,7 @@
 
 			e.preventDefault();
 			$.ajax({
-				url: abp.appPath + 'Roles/EditRoleModal?roleId=' + roleId,
+				url: abp.appPath + 'Admin/Roles/EditRoleModal?roleId=' + roleId,
 				type: 'POST',
 				contentType: 'application/html',
 				success: function (content) {
@@ -70,7 +70,7 @@
 
 		function deleteRole(roleId, roleName) {
 			abp.message.confirm(
-                abp.utils.formatString(abp.localization.localize('AreYouSureWantToDelete', 'Job'), roleName),
+				abp.utils.formatString(abp.localization.localize('AreYouSureWantToDelete', 'Job'), roleName),
 				function (isConfirmed) {
 					if (isConfirmed) {
 						_roleService.delete({

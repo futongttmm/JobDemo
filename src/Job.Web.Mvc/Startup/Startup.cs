@@ -14,6 +14,20 @@ using Job.Identity;
 using Job.Web.Resources;
 using Abp.AspNetCore.SignalR.Hubs;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Configuration;
+using Microsoft.AspNet.Identity;
+using Abp.Authorization.Users;
+using Job.Authorization.Roles;
+using Job.Authorization.Users;
+using Abp.Authorization.Roles;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Threading.Tasks;
+using Job.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Job.Web.Startup
 {
@@ -37,13 +51,40 @@ namespace Job.Web.Startup
                 options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
             });
 
+            services.AddDbContext<JobDbContext>(options => options.UseSqlServer("Server=localhost; Database=JobDb; Trusted_Connection=True;"));
+
+            IdentityRegistrar.Register(services);
+            AuthConfigurer.Configure(services, _appConfiguration);
+
+            // Use it after IdentityRegistrar.Register
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Admin/Account/Login";
+
+                //both of those two methods work well
+
+                //options.Events = new CookieAuthenticationEvents
+                //{
+                //    OnRedirectToLogin = ctx => {
+                //        var requestPath = ctx.Request.Path;
+                //        if (requestPath.StartsWithSegments("/Admin"))
+                //        {
+                //            ctx.Response.Redirect("/Admin/Account/Login");
+                //        }
+                //        else
+                //        {
+                //            ctx.Response.Redirect("/Admin/Account/Login");
+                //        }
+                //        return Task.CompletedTask;
+                //    }
+                //};
+            });
+
             // MVC
             services.AddMvc(
                 options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute())
             );
 
-            IdentityRegistrar.Register(services);
-            AuthConfigurer.Configure(services, _appConfiguration);
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
@@ -84,25 +125,21 @@ namespace Job.Web.Startup
 
             app.UseMvc(routes =>
             {
-                
 
-                routes.MapRoute(
-                    name: "defaultWithArea",
-                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //    name: "defaultWithArea",
+                //    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
                     name: "defaultWhitUser",
-                    template: "{area=User}/{controller=Home}/{action=Index}/{id?}"
+                    template: "{controller=Home}/{action=Index}/{id?}"
                     );
-
-                //routes.MapRoute(
-                //    name: "defaultWhitAdmin",
-                //    template: "{area=Admin}/{controller=Account}/{action=Login}/{id?}"
-                //    );
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Login}/{id?}");
+                    template: "{area=Admin}/{controller=Account}/{action=Login}/{id?}");
+
 
             });
         }

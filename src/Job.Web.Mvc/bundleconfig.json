@@ -148,5 +148,31 @@
     "inputFiles": [
       "wwwroot/view-resources/Views/Shared/Components/TenantChange/Default.js"
     ]
+  },
+
+
+
+  {
+    "outputFileName": "wwwroot/bundles/bundles.css",
+    "inputFiles": [
+      "wwwroot/Content/bootstrap.css",
+      "wwwroot/Content/datatables/css/datatables.bootstrap.css",
+      "wwwroot/Content/site.css",
+      "wwwroot/Content/typeahead.css",
+      "wwwroot/Content/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/bundles.js",
+    "inputFiles": [
+      "wwwroot/Scripts/jquery-{version}.js",
+      "wwwroot/Scripts/bootbox.js",
+      "wwwroot/Scripts/bootstrap.js",
+      "wwwroot/Scripts/respond.js",
+      "wwwroot/Scripts/datatables/jquery.datatables.js",
+      "wwwroot/Scripts/datatables/datatables.bootstrap.js",
+      "wwwroot/Scripts/typeahead.bundle.js",
+      "wwwroot/Scripts/toastr.js"
+    ]
   }
 ]

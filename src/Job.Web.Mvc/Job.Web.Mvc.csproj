@@ -10,7 +10,109 @@
     <RootNamespace>Job.Web</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\bundles\bundles.js" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
+    <None Include="wwwroot\bundles\bundles.js" />
+    <None Include="wwwroot\Content\bootstrap-theme.css.map" />
+    <None Include="wwwroot\Content\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\Content\bootstrap.css.map" />
+    <None Include="wwwroot\Content\bootstrap.min.css.map" />
+    <None Include="wwwroot\Content\DataTables\css\common.scss" />
+    <None Include="wwwroot\Content\DataTables\css\mixins.scss" />
+    <None Include="wwwroot\Content\DataTables\swf\flashExport.swf" />
+    <None Include="wwwroot\Content\toastr.less" />
+    <None Include="wwwroot\Content\toastr.scss" />
+    <None Include="wwwroot\Scripts\bloodhound.js" />
+    <None Include="wwwroot\Scripts\bloodhound.min.js" />
+    <None Include="wwwroot\Scripts\bootbox.js" />
+    <None Include="wwwroot\Scripts\bootbox.min.js" />
+    <None Include="wwwroot\Scripts\bootstrap.js" />
+    <None Include="wwwroot\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.bootstrap.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.foundation.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.foundation.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.jqueryui.js" />
+    <None Include="wwwroot\Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.bootstrap.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.bootstrap4.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.colVis.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.colVis.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.flash.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.flash.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.foundation.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.foundation.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.html5.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.html5.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.jqueryui.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.jqueryui.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.print.js" />
+    <None Include="wwwroot\Scripts\DataTables\buttons.print.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.autoFill.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.autoFill.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.bootstrap.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.buttons.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.buttons.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.colReorder.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.colReorder.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.fixedColumns.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.fixedHeader.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.foundation.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.foundation.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.jqueryui.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.keyTable.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.keyTable.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.material.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.material.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.responsive.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.responsive.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.rowReorder.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.scroller.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.scroller.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.select.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.select.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.semanticui.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.semanticui.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.uikit.js" />
+    <None Include="wwwroot\Scripts\DataTables\dataTables.uikit.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\jquery.dataTables.js" />
+    <None Include="wwwroot\Scripts\DataTables\jquery.dataTables.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.bootstrap.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.foundation.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.foundation.min.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.jqueryui.js" />
+    <None Include="wwwroot\Scripts\DataTables\responsive.jqueryui.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.min.map" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="wwwroot\Scripts\jquery.validate-vsdoc.js" />
+    <None Include="wwwroot\Scripts\jquery.validate.js" />
+    <None Include="wwwroot\Scripts\jquery.validate.min.js" />
+    <None Include="wwwroot\Scripts\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\Scripts\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\Scripts\modernizr-2.8.3.js" />
+    <None Include="wwwroot\Scripts\toastr.js" />
+    <None Include="wwwroot\Scripts\toastr.min.js" />
+    <None Include="wwwroot\Scripts\typeahead.bundle.js" />
+    <None Include="wwwroot\Scripts\typeahead.bundle.min.js" />
+    <None Include="wwwroot\Scripts\typeahead.jquery.js" />
+    <None Include="wwwroot\Scripts\typeahead.jquery.min.js" />
     <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -18,7 +120,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-    <None Update="wwwroot\**\*;Views\**\*">
+    <None Update="wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
   </ItemGroup>
@@ -26,6 +128,8 @@
     <ProjectReference Include="..\Job.Web.Core\Job.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.0">
       <PrivateAssets>all</PrivateAssets>
@@ -53,10 +157,28 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\User\Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Areas\Job\Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\bundles\bundles.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\_ViewImports.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\_ViewStart.cshtml" />
   </ItemGroup>
 </Project>

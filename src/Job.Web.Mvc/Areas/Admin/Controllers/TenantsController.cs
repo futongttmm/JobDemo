@@ -26,6 +26,7 @@ namespace Job.Web.Controllers
             return View(output);
         }
 
+        [HttpPost]
         public async Task<ActionResult> EditTenantModal(int tenantId)
         {
             var tenantDto = await _tenantAppService.Get(new EntityDto(tenantId));
